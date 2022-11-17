@@ -43,10 +43,10 @@ class Agent:
                         self.kind = 'R'
                         self.colour = (0, 0, 255)
 
-                elif self.kind == 'I':
-                    if a.kind == 'S':
-                        self.kind = 'S'
-                        self.kind = (215, 45, 45)
+                # elif self.kind == 'I':
+                #     if a.kind == 'S':
+                #         self.kind = 'S'
+                #         self.kind = (215, 45, 45)
 
         if int(self.x) > self.screen_size or int(self.x) < 0:
             self.x_vel *= -1
