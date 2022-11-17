@@ -5,10 +5,10 @@ Whispers is an Agent Based Model for rumour dissemination. It is an appropriatio
 
 Different agents in the system are either spreading or stifling the rumour, or are ignorant to the rumour. Further, the interactions between the different agents are as follows:
 
-*S + I -> S + S*
+*S + I &rarr; S + S*
 
-*S + R -> R + R*
+*S + R &rarr; R + R*
 
-*I + R -> I + R*
+*I + R &rarr; I + R*
 
 It should be noted that an agent interacting with an agent of equal kind is ineffectual.
