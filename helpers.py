@@ -1,17 +1,17 @@
 import random
-import pygame
 from Agent import Agent
 
-def create_agents(N, num_ignorants, num_spreaders):
+def create_agents(N, num_ignorants, num_spreaders, num_stiflers):
     
     agents = []
 
-    for i in range(num_spreaders):
+    # note that spreaders have a higher range of velocities
+    for s in range(num_spreaders):
         # use RNG to determine the initial agent velocity vector
         x = random.randint(0, N)
         y = random.randint(0, N)
-        x_vel = random.randint(2, 5)
-        y_vel = random.randint(2, 5)
+        x_vel = random.randint(5, 10)
+        y_vel = random.randint(5, 10)
 
         agent = Agent('S', x, y, N, x_vel, y_vel, (215, 45, 45))
         agents.append(agent)
@@ -21,12 +21,23 @@ def create_agents(N, num_ignorants, num_spreaders):
         # use RNG to determine the initial agent velocity vector
         x = random.randint(0, N)
         y = random.randint(0, N)
-        x_vel = random.randint(5, 10)
-        y_vel = random.randint(5, 10)
+        x_vel = random.randint(4, 6)
+        y_vel = random.randint(4, 6)
 
         agent = Agent('I', x, y, N, x_vel, y_vel, (255, 255, 255))
         agents.append(agent)
-    
+
+    for r in range(num_stiflers):
+
+        # use RNG to determine the initial agent velocity vector
+        x = random.randint(0, N)
+        y = random.randint(0, N)
+        x_vel = random.randint(4, 6)
+        y_vel = random.randint(4, 6)
+
+        agent = Agent('R', x, y, N, x_vel, y_vel, (0, 0, 255))
+        agents.append(agent)
+
     return agents
 
 def move_agents(agents):
